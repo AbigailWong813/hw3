@@ -66,7 +66,9 @@ void dealloc(Node* head)
 //   Add any helper functions or
 //   function object struct declarations
 // -----------------------------------------------
-
+bool isOdd(int x){
+    return x % 2 != 0;
+}
 
 
 
@@ -86,6 +88,17 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
+    Node* filtered = llfilter(head, isOdd);
+    cout << "Filtered list: ";
+    print(filtered);
+
+    Node* smaller = nullptr;
+    Node* larger = nullptr;
+    llpivot(filtered, smaller, larger, 7);
+    cout << "Smaller list: ";
+    print(smaller);
+    cout << "Larger list: ";
+    print(larger);
 
 
 
